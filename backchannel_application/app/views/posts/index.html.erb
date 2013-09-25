@@ -1,0 +1,8 @@
+<h1>Live Feedback</h1>
+<% @posts.each do |post| %>
+    <h2> <%= link_to post.title,post %>  </h2>
+    <p> <%=post.description %> </p>
+    <p> <%= link_to "Edit" , edit_post_path(post) %>
+      <%= link_to "Delete" , post ,:confirm => "Are you sure" ,:method => :delete%></p>
+<% end %>
+<p><%= link_to "Click to add a new Post", new_post_path %></p>
